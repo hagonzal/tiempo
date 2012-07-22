@@ -1,0 +1,30 @@
+# Compiled source
+*.class
+*.o
+*.so
+*.out
+*.d
+*.a
+*.exe
+# vi swap files
+*.swp
+# eclipse files
+.project
+.cproject
+.settings
+# generated code for protocol buffers
+*.pb.cc
+*.pb.h
+# generated code for bison/flex
+*.yy.c
+*.tab.c
+*.tab.h
+# temporary file
+*.bak
+*.tmp
+*.swp
+x
+y
+z
+a
+b

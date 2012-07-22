@@ -1,0 +1,88 @@
+Playground to experiment with ideas in parsing and analyzing time series data.
+
+Coding Conventions
+------------------
+
+We follow Google's c++ style guide.
+http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
+
+Developing new code
+-------------------
+
+We use git for source control and for the review process.
+Before you contribute any code please read the document
+doc/git_workflow.txt
+
+Required tools
+--------------
+
+- Bison/flex
+sudo apt-get install bison
+sudo apt-get install flex
+
+Required libraries
+------------------
+
+- Boost libraries
+on ubuntu:
+sudo apt-get install libboost-dev libboost-doc
+sudo apt-get install boost-regex1.46-dev
+sudo apt-get install libboost-iostreams-dev
+
+- Armadillo (version >= 3.0) 
+http://arma.sourceforge.net/
+The version that comes with ubuntu is too old. You need to download
+directly from the project page.
+
+- Google protocol buffer library
+http://code.google.com/p/protobuf/
+
+- Google testing framework: gtest-1.6.0. Needs to be installed in ../gtest-1.6.0
+http://code.google.com/p/googletest/
+
+- Google flags parsing library:
+http://code.google.com/p/google-gflags/
+
+- Google logging library
+http://code.google.com/p/google-glog/
+
+- In order to test leveldb you need to install leveldb in ../leveldb
+http://code.google.com/p/leveldb/
+
+- leveldb also needs snappy
+http://code.google.com/p/snappy/
+
+- google sparse hash library
+http://code.google.com/p/sparsehash
+
+- libunwind (necessary for gperftools)
+
+http://www.nongnu.org/libunwind/
+
+download version 1.0.1
+
+use the following configure command:
+
+./configure CFLAGS="-U_FORTIFY_SOURCE"
+
+- google profiler library
+http://code.google.com/p/gperftools
+
+Compiling
+---------
+
+In the source directory (./project/tiempo)
+
+make clean
+make all
+
+if you have more than one core
+
+make -j num_cores
+
+Makefile
+--------
+
+There is a single Makefile for the entire project.
+We the make model recommended in the paper:
+ "Recursive Make Considered Harmful": http://aegis.sourceforge.net/auug97.pdf"

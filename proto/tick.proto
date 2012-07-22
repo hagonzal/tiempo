@@ -1,0 +1,45 @@
+// Copyright (c) 2011 The Tiempo Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file. See the AUTHORS file for names of contributors.
+
+// Author: Hector Gonzalez (hagonzal@gmail.com)
+//
+// Protocol buffer definitions for representing raw and summarized
+// tick data.
+
+package data;
+
+// Raw tick
+message Tick {
+  optional string symbol = 1;
+  optional Time time = 2;
+  optional TickValue value = 3;
+}
+
+message TickValue {
+  optional double bid = 3;
+  optional double ask = 4;
+  optional int32 bid_size = 5;
+  optional int32 ask_size = 6;
+}
+
+// Summarized tick data in time series format.
+message Group {
+  optional string symbol = 1;
+
+  // Day for the time series.
+  optional Time time = 2;
+
+  // Time series, one entry per time unit.
+  repeated TickValue values = 3;
+}
+
+message Time {
+  optional int32 year = 1;
+  optional int32 month = 2;
+  optional int32 day = 3;
+  optional int32 hour = 4;
+  optional int32 minute = 5;
+  optional int32 second = 6;
+  optional int32 millis = 7;
+}

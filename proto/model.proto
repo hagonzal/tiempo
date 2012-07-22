@@ -1,0 +1,24 @@
+// Copyright (c) 2012 The Tiempo Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file. See the AUTHORS file for names of contributors.
+
+// Author: Hector Gonzalez (hagonzal@gmail.com)
+//
+// Protocol buffer definitions for representing model parameters
+
+package model;
+
+message LinearModel {
+  optional string name = 1;
+
+  optional int32 p = 2;
+  optional int32 n = 3;
+
+  optional double r2 = 4;
+  optional double f = 5;
+
+  repeated double b = 6;
+  repeated double sb = 7;
+
+  optional bool intercept = 8;
+}
